@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paper Radar</title>
+  <meta name="description" content="소비자행동 분야의 최신 논문과 주목받는 논문을 매일 자동으로 모아 보여주는 개인 논문 레이더">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23b4532a'/><circle cx='16' cy='16' r='8' fill='none' stroke='white' stroke-width='2'/><circle cx='16' cy='16' r='2.5' fill='white'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14"/><circle cx="16" cy="16" r="8" class="ring"/><circle cx="16" cy="16" r="2.5" class="dot"/></svg>
+        <div>
+          <h1 id="site-title">Paper Radar</h1>
+          <p id="site-subtitle" class="subtitle">소비자행동 연구의 오늘</p>
+        </div>
+      </div>
+      <div class="masthead-meta">
+        <span id="updated" class="updated"></span>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="테마 전환" title="테마 전환">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="wrap tabs" role="tablist" aria-label="보기">
+      <button role="tab" data-view="feed" aria-selected="true">최신 논문</button>
+      <button role="tab" data-view="hot" aria-selected="false">지금 뜨는 논문</button>
+      <button role="tab" data-view="journals" aria-selected="false">저널 신간</button>
+      <button role="tab" data-view="trends" aria-selected="false">트렌드</button>
+      <button role="tab" data-view="saved" aria-selected="false">읽을 목록 <span id="saved-count" class="count"></span></button>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="toolbar" aria-label="필터">
+      <div id="topic-chips" class="chips" role="group" aria-label="주제"></div>
+      <div class="toolbar-row">
+        <label class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <input id="search" type="search" placeholder="제목, 저자, 키워드로 찾기" autocomplete="off">
+        </label>
+        <button id="add-topic" class="btn ghost" type="button">+ 내 키워드 추가</button>
+      </div>
+    </section>
+
+    <section id="view" aria-live="polite"></section>
+  </main>
+
+  <dialog id="topic-dialog">
+    <form method="dialog" id="topic-form">
+      <h2>내 키워드 추가</h2>
+      <p class="muted">추가한 키워드는 이 브라우저에 저장되고, 열 때마다 OpenAlex에서 바로 새 논문을 불러와요.</p>
+      <label>이름<input name="name" required maxlength="30" placeholder="예: 향수와 기억"></label>
+      <label>검색어<input name="query" required maxlength="200" placeholder="예: nostalgia consumer OR &quot;nostalgic marketing&quot;"></label>
+      <p class="hint">여러 단어는 OR로 묶고, 정확한 구절은 큰따옴표로 감싸세요.</p>
+      <menu>
+        <button value="cancel" class="btn ghost" formnovalidate>취소</button>
+        <button value="ok" class="btn primary">추가</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <div id="tooltip" class="tooltip" role="status" hidden></div>
+  <footer class="wrap footer">
+    데이터: <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a> · 매일 오전 6시 자동 업데이트
+  </footer>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "site_title": "Paper Radar",
+  "subtitle": "소비자행동 연구의 오늘",
+  "mailto": "",
+  "latest_days": 120,
+  "hot_window_days": 730,
+  "per_topic": 40,
+  "journals": [
+    { "name": "Journal of Consumer Research", "short": "JCR", "issn": "0093-5301" },
+    { "name": "Journal of Marketing Research", "short": "JMR", "issn": "0022-2437" },
+    { "name": "Journal of Marketing", "short": "JM", "issn": "0022-2429" },
+    { "name": "Journal of Consumer Psychology", "short": "JCP", "issn": "1057-7408" },
+    { "name": "Marketing Science", "short": "MKSC", "issn": "0732-2399" },
+    { "name": "Journal of the Academy of Marketing Science", "short": "JAMS", "issn": "0092-0703" },
+    { "name": "International Journal of Research in Marketing", "short": "IJRM", "issn": "0167-8116" },
+    { "name": "Journal of Retailing", "short": "JR", "issn": "0022-4359" },
+    { "name": "Journal of the Association for Consumer Research", "short": "JACR", "issn": "2378-1815" }
+  ],
+  "topics": [
+    {
+      "id": "decision",
+      "name": "소비자 의사결정",
+      "en": "Consumer decision making",
+      "query": "\"consumer decision making\" OR \"consumer choice\" OR \"choice overload\""
+    },
+    {
+      "id": "ai",
+      "name": "AI와 소비자",
+      "en": "AI & consumers",
+      "query": "\"artificial intelligence\" consumer OR \"algorithm aversion\" OR chatbot consumer"
+    },
+    {
+      "id": "social",
+      "name": "소셜미디어·인플루언서",
+      "en": "Social media & influencers",
+      "query": "influencer marketing OR \"social media\" consumer OR \"word of mouth\""
+    },
+    {
+      "id": "sustain",
+      "name": "지속가능 소비",
+      "en": "Sustainable consumption",
+      "query": "\"sustainable consumption\" OR \"green consumer\" OR \"pro-environmental\" consumer"
+    },
+    {
+      "id": "brand",
+      "name": "브랜드·정체성",
+      "en": "Brands & identity",
+      "query": "\"brand attachment\" OR \"consumer identity\" OR \"brand relationship\""
+    },
+    {
+      "id": "pricing",
+      "name": "가격·행동경제학",
+      "en": "Pricing & behavioral economics",
+      "query": "\"price perception\" OR \"mental accounting\" OR \"behavioral pricing\""
+    }
+  ]
+}
